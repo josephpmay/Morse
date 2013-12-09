@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+	<title>Morse Search</title> 
+
+	<!-- Include JQueary here / other framework if needed -->
+
+
+</head>
+
+<body id="element">
+
+	<h1 >Instructions</h1>
+	<h3> To enter a dot, click your mouse and imediately release it. To enter a dash, hold down the mouse for three times the length of a dot. Do not pause between each dot or dash in a letter. DO pause between each letter. A space is entered by holding down the mouse for 2 seconds. The search is submitted by holding down the mouse for 5 seconds.</h3>
+	<h2 id="status"></h2>
+	<h2 id="letter"></h2> 
+
+	<script language="javascript" type="text/javascript" >
+		<!-- Hide Javascript Code
+
+
+
+		//program currently is not object oriented. The structure did not necessitate it being object oriented
+
+
+
+
+		(function () {
+		    var element = document.getElementById('element'), //'element' not currently used, because changed to window.onmouse...
+		    status = document.getElementById('status'), //element for displaying if clicked up or down
+		    letter = document.getElementById('letter'),
+		        start, end, betweenStart, betweenEnd;
+
+		    var dotholder = []; //creates an array that is used to store each dot or dash. The array will be cleared when 
+		    var letterholder = []; //creates an array that is used to store each letter
+
+		    window.onmousedown = function () {
+		      start = +new Date();  // get unix-timestamp in milliseconds
+		      betweenEnd = +new Date(); //end of mouse up timer
+		      if(betweenStart != undefined) //measures the amount of time that has elapsed between clicks, if there was a previous click
+		     	 var betweenDiff = betweenEnd - betweenStart;
+		      if(betweenDiff>=800)
+		      	{var text = 'new letter';
+		      		//add next_letter to array
+		      	 status.innerHTML = text; 
+		      	//add to array -> returned value of switchLetters();
+		      	}
+
+//if a (search) key is entered, first have last letter translated
+
+
+		    };
+
+		    //this function 
+		    function switchLetters() {
+
+		    	//Switch Statement that will be written in comments for right now: 
+		      	// /*
+				
+				switch(dotholder[0]) //first letter
+				{
+					case('dot') 
+					{
+						switch(dotholder[2])
+						{
+							case('dot')
+							{
+								switch(dotholder[3]) 
+								{
+									case('dot')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+
+									case('dash')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{	
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+									case('next_letter')
+									{
+									return 'i';
+									}
+								}
+							}
+
+							case('dash') 
+							{
+								switch(dotholder[3]) 
+								{
+									case('dot')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+
+									case('dash')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+									case('next_letter')
+									{
+										return 'a';
+									}
+								}
+							}
+							case('next_letter')
+							{
+								return 'e';	
+							}
+						}
+
+					}
+	
+					case('dash')
+					{
+						switch(dotholder[2]) 
+						{
+							case('dot')
+							{
+								switch(dotholder[3]) 
+								{
+									case('dot')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+
+									case('dash')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+									case('next_letter')
+									{
+										return 'n';
+									}
+								}
+							}
+
+							case('dash')
+							{
+								switch(dotholder[3])  
+								{
+									case('dot')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+
+									case('dash')
+									{
+										switch(dotholder[4]) 
+										{
+											case('dot')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+
+											case('dash')
+											{
+												switch(dotholder[5]) 
+												{
+													case('dot')
+													{
+
+													}
+
+													case('dash')
+													{
+
+													}
+													case('next_letter')
+													{
+													return ' ';
+													}
+												}
+											}
+											case('next_letter')
+											{
+											return ' ';
+											}
+										}
+									}
+									case('next_letter')
+									{
+										return 'm';
+									}
+								}
+							}
+							case('next_letter')
+							{
+								return 't';
+							}
+						}
+					}
+
+					case('next_letter')
+					{
+						return 'error';
+					}
+
+				}
+
+
+
+				//*/
+		    }
+
+
+		    window.onmouseup = function () {
+		      end = +new Date();
+
+		      //get mouse timer when mouse is down, and chck that against NEXT click in order to see if should be new letter
+		      //when time up is greater >, converts dots in array to letter, adds letter to letterholder array, and clears dotholder array
+
+		      var diff = end - start; // time difference in milliseconds
+		      
+		      var text;
+
+
+		      		//Depending on the length of the click, either adds a dot to the array, adds a dash to the array or something for spaces
+		      if (diff<200)
+		      	text = 'dot'; //dotholder.push('dot');
+		      else if (diff>=200 && diff<1000)
+		      	text = 'dash'; // dotholder.push('dash');
+		      else if (diff>=1000 && diff<5000) //do shit to end letter and then...
+		      	text = 'space';
+		      else if (diff>=5000)
+		      {
+		      	window.location = "https://www.google.com/#q=wow+such+doge";
+		      	text = 'googling...'
+		      }
+
+		      status.innerHTML = text;
+
+				betweenStart = +new Date(); //start of mouse up timer
+				};
+
+
+			//window.onmouseup = function () {
+			//	betweenStart = +new Date();
+			//}
+
+})();
+
+
+
+
+
+		-->
+
+	</script>
+
+	<noscript>
+		<h1>Javascript is required to view this webpage</h1>
+	</noscript>
+
+	</body>
