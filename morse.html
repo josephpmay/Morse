@@ -43,9 +43,9 @@
 		     	 var betweenDiff = betweenEnd - betweenStart;
 		      if(betweenDiff>=800)
 		      	{var text = 'new letter';
-		      		//add next_letter to array
+		      	dotholder.push('next_letter');
 		      	 status.innerHTML = text; 
-		      	//add to array -> returned value of switchLetters();
+		      	letterholder.push(switchLetters());
 		      	}
 
 //if a (search) key is entered, first have last letter translated
@@ -61,230 +61,230 @@
 				
 				switch(dotholder[0]) //first letter
 				{
-					case('dot') 
+					case('dot'): 
 					{
 						switch(dotholder[1])
 						{
-							case('dot')
+							case('dot'):
 							{
 								switch(dotholder[2]) 
 								{
-									case('dot')
+									case('dot'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 														return "5";
 													}
 
-													case('dash')
+													case('dash'):
 													{
 														return "4";
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 														return 'H';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 														return '3'
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 														return 'V';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'S';
 											}
 										}
 									}
 
-									case('dash')
+									case('dash'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'F';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{	
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return ' ';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'U';
 											}
 										}
 									}
-									case('next_letter')
+									case('next_letter'):
 									{
 									return 'I';
 									}
 								}
 							}
 
-							case('dash') 
+							case('dash'):
 							{
 								switch(dotholder[2]) 
 								{
-									case('dot')
+									case('dot'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'L';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return ' ';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'R';
 											}
 										}
 									}
 
-									case('dash')
+									case('dash'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'P';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'J';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'W';
 											}
 										}
 									}
-									case('next_letter')
+									case('next_letter'):
 									{
 										return 'A';
 									}
 								}
 							}
-							case('next_letter')
+							case('next_letter'):
 							{
 								return 'E';	
 							}
@@ -292,237 +292,237 @@
 
 					}
 	
-					case('dash')
+					case('dash'):
 					{
 						switch(dotholder[1]) 
 						{
-							case('dot')
+							case('dot'):
 							{
 								switch(dotholder[2]) 
 								{
-									case('dot')
+									case('dot'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'B';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'X';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'D';
 											}
 										}
 									}
 
-									case('dash')
+									case('dash'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'C';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'Y';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'K';
 											}
 										}
 									}
-									case('next_letter')
+									case('next_letter'):
 									{
 										return 'N';
 									}
 								}
 							}
 
-							case('dash')
+							case('dash'):
 							{
 								switch(dotholder[2])  
 								{
-									case('dot')
+									case('dot'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'Z';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return 'Q';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'G';
 											}
 										}
 									}
 
-									case('dash')
+									case('dash'):
 									{
 										switch(dotholder[3]) 
 										{
-											case('dot')
+											case('dot'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return ' ';
 													}
 												}
 											}
 
-											case('dash')
+											case('dash'):
 											{
 												switch(dotholder[4]) 
 												{
-													case('dot')
+													case('dot'):
 													{
 
 													}
 
-													case('dash')
+													case('dash'):
 													{
 
 													}
-													case('next_letter')
+													case('next_letter'):
 													{
 													return ' ';
 													}
 												}
 											}
-											case('next_letter')
+											case('next_letter'):
 											{
 											return 'O';
 											}
 										}
 									}
-									case('next_letter')
+									case('next_letter'):
 									{
 										return 'M';
 									}
 								}
 							}
-							case('next_letter')
+							case('next_letter'):
 							{
 								return 'T';
 							}
 						}
 					}
 
-					case('next_letter')
+					case('next_letter'):
 					{
 						return 'error';
 					}
@@ -531,7 +531,7 @@
 
 
 
-				//*/
+				
 		    }
 
 
@@ -548,15 +548,21 @@
 
 		      		//Depending on the length of the click, either adds a dot to the array, adds a dash to the array or something for spaces
 		      if (diff<200)
-		      	text = 'dot'; //dotholder.push('dot');
+		      	{
+		      	text = 'dot'; 
+		      	dotholder.push('dot');
+		      }
 		      else if (diff>=200 && diff<1000)
-		      	text = 'dash'; // dotholder.push('dash');
+		      	{
+		      	text = 'dash'; 
+		        dotholder.push('dash');
+		   	  }
 		      else if (diff>=1000 && diff<5000) //do shit to end letter and then...
 		      	text = 'space';
 		      else if (diff>=5000)
 		      {
 		      	window.location = "https://www.google.com/#q=wow+such+doge";
-		      	text = 'googling...'
+		      	text = 'googling...';
 		      }
 
 		      status.innerHTML = text;
