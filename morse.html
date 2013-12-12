@@ -3,6 +3,18 @@
 
 <head>
 
+<style type="text/css">
+body {background-color:#0b6b3a;}
+h1 { font-family: "Share Tech Mono", sans-serif; font-size:300%; padding-left: 5%; padding-bottom: 0%; }
+img {  max-width: 66%; max-height: 50%; display: block;  margin-left: auto; margin-right: auto  }
+h2 { font-family: "Share Tech Mono", sans-serif;  padding-left: 5%; padding-bottom: 0%; padding-top: 0%; }
+h3 {font-family: "Share Tech Mono", sans-serif; font-size:100%; padding-left: 5%; padding-right: 5%; position: absolute; bottom: 0; left: 0;}
+h4 {font-family: "Share Tech Mono", sans-serif;  padding-left: 40%; position: absolute; bottom: 0; text-align:center;}
+
+</style>
+
+<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+
 	<title>Morse Search</title> 
 
 	<!-- Include JQueary here / other framework if needed -->
@@ -12,10 +24,14 @@
 
 <body id="element">
 
-	<h1 >Instructions</h1>
-	<h3> To enter a dot, click your mouse and imediately release it. To enter a dash, hold down the mouse for three times the length of a dot. Do not pause between each dot or dash in a letter. DO pause between each letter. A space is entered by holding down the mouse for 2 seconds. The search is submitted by holding down the mouse for 5 seconds.</h3>
-	<h2 id="status"></h2>
-	<h2 id="letter"></h2> 
+	<h1 >MorseSearch</h1>
+	<h3> Instructions: To enter a dot, click your mouse and imediately release it. To enter a dash, hold down the mouse for three times the length of a dot. Do not pause between each dot or dash in a letter. DO pause between each letter. A space is entered by holding down the mouse for 2 seconds. The search is submitted by holding down the mouse for 5 seconds. Coppyright 2013 <a href="http://josephpmay.com">Solwin Labs</a>. All rights reserved. Fork me on <a href="https://github.com/josephpmay/Morse">Github</a>.</h3>
+	<h4> </h4>
+	<h2> Search the web using morse code</h2> 
+	<h2 id="status">Click for dot, click & hold for dash</h2>
+	<h2 id="letter"> ......................</h2> 
+	<h2> </h2>
+	<img src="key.jpg" alt="this is a Morse Code key">
 
 	<script language="javascript" type="text/javascript" >
 		<!-- Hide Javascript Code
@@ -560,7 +576,10 @@
 		      		if (storedEnd> start)
 		      			{var text = 'new letter';
 		      			dotholder.push('next_letter');
-		      	 		status.innerHTML = text; 
+		      	 		if (text == undefined)
+		      				status.innerHTML = "space";
+		     			else
+		      				status.innerHTML = text;
 		      			letterholder.push(switchLetters());
 		      			letter.innerHTML = letterholder.join('');
 		      			dotholder = [];
@@ -579,7 +598,10 @@
 		      		if (storedEnd> start)
 		      			{var text = 'new letter';
 		      			dotholder.push('next_letter');
-		      	 		status.innerHTML = text; 
+		      	 		if (text == undefined)
+		      				status.innerHTML = "space";
+		     			else
+		      				status.innerHTML = text;
 		      			letterholder.push(switchLetters());
 		      			letter.innerHTML = letterholder.join('');
 		      			dotholder = [];
@@ -591,7 +613,10 @@
 		      	//text = 'space';
 		      {
 		      	dotholder.push('next_letter');
-		      	status.innerHTML = text; 
+		      	if (text == undefined)
+		      		status.innerHTML = "space";
+		      	else
+		      		status.innerHTML = text;
 		      	letterholder.push(' ');
 		      	letter.innerHTML = letterholder.join('');
 		      	dotholder = [];
@@ -603,7 +628,10 @@
 		      	text = 'googling...';
 		      }
 
-		      status.innerHTML = text;
+		      if (text == undefined)
+		      	status.innerHTML = "space";
+		      else
+		      	status.innerHTML = text;
 
 		      	//store old mouse up
 		      	//WAIT (amount of time), if mousedown is less than stored mouse up time, convert to and display letter
