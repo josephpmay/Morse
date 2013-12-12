@@ -38,7 +38,7 @@
 
 		    window.onmousedown = function () {
 		      start = +new Date();  // get unix-timestamp in milliseconds
-		      betweenEnd = +new Date(); //end of mouse up timer
+		/*      betweenEnd = +new Date(); //end of mouse up timer
 		      if(betweenStart != undefined) //measures the amount of time that has elapsed between clicks, if there was a previous click
 		     	 var betweenDiff = betweenEnd - betweenStart;
 		      if(betweenDiff>=800)
@@ -48,7 +48,7 @@
 		      	letterholder.push(switchLetters());
 		      	letter.innerHTML = letterholder;
 		      	dotholder = [];
-		      	}
+		      	}	*/
 
 //if a (search) key is entered, first have last letter translated
 
@@ -526,7 +526,7 @@
 
 					case('next_letter'):
 					{
-						return 'error';
+						//return 'error';
 					}
 
 				}
@@ -553,21 +553,61 @@
 		      	{
 		      	text = 'dot'; 
 		      	dotholder.push('dot');
+
+		      	 	var storedEnd = end;
+		      	setTimeout(function() {
+
+		      		if (storedEnd> start)
+		      			{var text = 'new letter';
+		      			dotholder.push('next_letter');
+		      	 		status.innerHTML = text; 
+		      			letterholder.push(switchLetters());
+		      			letter.innerHTML = letterholder.join('');
+		      			dotholder = [];
+		      		}
+
+		      	}, 800);
 		      }
 		      else if (diff>=200 && diff<1000)
 		      	{
 		      	text = 'dash'; 
 		        dotholder.push('dash');
+
+		         	var storedEnd = end;
+		      	setTimeout(function() {
+
+		      		if (storedEnd> start)
+		      			{var text = 'new letter';
+		      			dotholder.push('next_letter');
+		      	 		status.innerHTML = text; 
+		      			letterholder.push(switchLetters());
+		      			letter.innerHTML = letterholder.join('');
+		      			dotholder = [];
+		      		}
+
+		      	}, 800);
 		   	  }
 		      else if (diff>=1000 && diff<5000) //do shit to end letter and then...
-		      	text = 'space';
+		      	//text = 'space';
+		      {
+		      	dotholder.push('next_letter');
+		      	status.innerHTML = text; 
+		      	letterholder.push(' ');
+		      	letter.innerHTML = letterholder.join('');
+		      	dotholder = [];
+		      }
 		      else if (diff>=5000)
 		      {
-		      	window.location = "https://www.google.com/#q=wow+such+doge";
+
+		      	window.location = ("https://www.google.com/#q=" + letterholder.join(''));
 		      	text = 'googling...';
 		      }
 
 		      status.innerHTML = text;
+
+		      	//store old mouse up
+		      	//WAIT (amount of time), if mousedown is less than stored mouse up time, convert to and display letter
+		     
 
 				betweenStart = +new Date(); //start of mouse up timer
 				};
